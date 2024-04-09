@@ -23,7 +23,7 @@ spec:
             - name: MARIADB_ROOT_PASSWORD
               value: "1234"
             - name: MARIADB_DATABASE
-              value: krampoline
+              value: nalsee
             - name: MYSQL_DISABLE_UPGRADE_BACKUP
               value: '1'
           volumeMounts:
