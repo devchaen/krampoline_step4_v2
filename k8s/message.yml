@@ -30,10 +30,6 @@ spec:
         httpGet:
           path: /api/test
           port: 8090
-      volumes:
-      - name: nalsee
-        secret:
-          secretName: my-secret
 ---
 apiVersion: v1
 kind: Service
