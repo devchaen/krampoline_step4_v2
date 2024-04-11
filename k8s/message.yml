@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: message
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_7d0b1de44251
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_b3610a5cabf7
           env:
             - name: TZ
               value: Asia/Seoul
