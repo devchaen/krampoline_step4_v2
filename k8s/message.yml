@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: message
+spec:
+  selector:
+    matchLabels:
+      app: message
+  template:
+    metadata:
+      labels:
+        app: message
+    spec:
+      containers:
+        - name: message
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_7d0b1de44251
+          env:
+            - name: TZ
+              value: Asia/Seoul
+            - name: DATABASE_URL
+              value: jdbc:mongodb://mongodb:27017/nalsee
+          volumeMounts:
+          - name: nalsee
+            mountPath: /home/gradle/project/src/main/resources/application-prod.yml
+            subPath: application-prod.yml
+          resources:
+            requests:
+              memory: 1Gi
+      readinessProbe:
+        httpGet:
+          path: /api/test
+          port: 8090
+      volumes:
+      - name: nalsee
+        secret:
+          secretName: my-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: message
+spec:
+  selector:
+    app: message
+  ports:
+    - port: 8090
+      targetPort: 8090
