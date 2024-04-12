@@ -20,9 +20,9 @@ spec:
           - name: nalsee
             mountPath: /home/gradle/project/.env
             subPath: .env
-          resources:
-            requests:
-              memory: 1Gi
+        resources:
+          requests:
+            memory: 1Gi
       volumes:
       - name: nalsee
         secret:
