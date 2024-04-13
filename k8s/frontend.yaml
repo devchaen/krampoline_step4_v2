@@ -19,7 +19,7 @@ spec:
           volumeMounts:
             - name: nalsee
               mountPath: /.env
-              # subPath: .env
+              subPath: .env
               readOnly: true
           resources:
             requests:
