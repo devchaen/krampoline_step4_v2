@@ -18,7 +18,7 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_689e3a52a1b2
           envFrom:
             - secretRef:
-              name: my-secret
+                name: my-secret
           volumeMounts:
             - name: nalsee
               mountPath: /app/.env
