@@ -12,3 +12,7 @@ configMapGenerator:
   - name: init-db
     files:
       - configs/init.sql
+secretGenerator:
+- name: frontend-secrets
+  files:
+  - .env
