@@ -18,7 +18,8 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_689e3a52a1b2
           volumeMounts:
             - name: nalsee
-              mountPath: .
+              mountPath: /.env
+              subPath: .env
               readOnly: true
           resources:
             requests:
