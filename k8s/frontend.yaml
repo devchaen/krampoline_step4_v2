@@ -15,7 +15,7 @@ spec:
       containers:
         - name: frontend
           # 여러분의 frontend image 주소를 입력해주세요.
-          image: sha256-52fc6ff11abdfc67108091f67ba4a287b9b30259acb8873ca8767dff0d27ccb7?context=repo
+          image: cha3n/nalsee-front-pwa:latest
 ---
 apiVersion: v1
 kind: Service
