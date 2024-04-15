@@ -13,16 +13,12 @@ spec:
     spec:
       containers:
         - name: backend
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_9fbfa81f1fba
+          image: hyejin724/nalsee:latest
           env:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
               value: jdbc:mariadb://mariadb:3306/nalsee
-          volumeMounts:
-          - name: nalsee
-            mountPath: /src/main/resources/application-kram.yml
-            subPath: application-kram.yml
           resources:
             requests:
               memory: 1Gi
@@ -30,10 +26,6 @@ spec:
         httpGet:
           path: /api/test
           port: 8080
-      volumes:
-      - name: nalsee
-        secret:
-          secretName: my-secret
 ---
 apiVersion: v1
 kind: Service
